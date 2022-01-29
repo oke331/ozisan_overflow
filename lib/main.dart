@@ -30,12 +30,49 @@ class _OzisanPageState extends State<OzisanPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          _isSlimMan
-              ? Image.asset('assets/fat.PNG')
-              : Image.asset('assets/slim.PNG'),
-        ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Text(
+                      'おじさんが\n痩せたり太ったりする\nアプリです。',
+                      style: Theme.of(context).textTheme.headline5,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 35),
+                    const Text(
+                      '痩せてるおじさんも、太ってるおじさんも、\n'
+                      'どっちもイカしてる。',
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 120),
+                    Image.asset(
+                      _isSlimMan ? 'assets/slim.PNG' : 'assets/fat.PNG',
+                      height: 200,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ],
+                ),
+              ),
+              _buttonSection(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buttonSection() {
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: () => setState(() => _isSlimMan = !_isSlimMan),
+        child: Text(_isSlimMan ? 'リバウンドする' : 'ダイエットする'),
       ),
     );
   }
