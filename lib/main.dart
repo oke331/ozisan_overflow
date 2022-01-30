@@ -45,6 +45,7 @@ class _OzisanPageState extends State<OzisanPage> {
                           'おじさんが\n痩せたり太ったりする\nアプリです。',
                           style: Theme.of(context).textTheme.headline5,
                           textAlign: TextAlign.center,
+                          textScaleFactor: 1,
                         ),
                       ),
                     ),
@@ -55,6 +56,7 @@ class _OzisanPageState extends State<OzisanPage> {
                           '痩せてるおじさんも、太ってるおじさんも、\n'
                           'どっちもイカしてる。',
                           textAlign: TextAlign.center,
+                          textScaleFactor: 1,
                         ),
                       ),
                     ),
@@ -82,7 +84,10 @@ class _OzisanPageState extends State<OzisanPage> {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () => setState(() => _isSlimMan = !_isSlimMan),
-        child: Text(_isSlimMan ? 'リバウンドする' : 'ダイエットする'),
+        child: Text(
+          _isSlimMan ? 'リバウンドする' : 'ダイエットする',
+          textScaleFactor: 1,
+        ),
       ),
     );
   }
