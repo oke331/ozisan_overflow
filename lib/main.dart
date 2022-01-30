@@ -13,6 +13,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const OzisanPage(),
+      builder: (context, child) {
+        final mediaQueryData = MediaQuery.of(context);
+        return MediaQuery(
+          data: mediaQueryData.copyWith(textScaleFactor: 1),
+          child: child!,
+        );
+      },
     );
   }
 }
@@ -45,7 +52,6 @@ class _OzisanPageState extends State<OzisanPage> {
                           'おじさんが\n痩せたり太ったりする\nアプリです。',
                           style: Theme.of(context).textTheme.headline5,
                           textAlign: TextAlign.center,
-                          textScaleFactor: 1,
                         ),
                       ),
                     ),
@@ -56,7 +62,6 @@ class _OzisanPageState extends State<OzisanPage> {
                           '痩せてるおじさんも、太ってるおじさんも、\n'
                           'どっちもイカしてる。',
                           textAlign: TextAlign.center,
-                          textScaleFactor: 1,
                         ),
                       ),
                     ),
@@ -86,7 +91,6 @@ class _OzisanPageState extends State<OzisanPage> {
         onPressed: () => setState(() => _isSlimMan = !_isSlimMan),
         child: Text(
           _isSlimMan ? 'リバウンドする' : 'ダイエットする',
-          textScaleFactor: 1,
         ),
       ),
     );
