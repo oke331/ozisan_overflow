@@ -38,23 +38,30 @@ class _OzisanPageState extends State<OzisanPage> {
               Expanded(
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
-                    Text(
-                      'おじさんが\n痩せたり太ったりする\nアプリです。',
-                      style: Theme.of(context).textTheme.headline5,
-                      textAlign: TextAlign.center,
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          'おじさんが\n痩せたり太ったりする\nアプリです。',
+                          style: Theme.of(context).textTheme.headline5,
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ),
-                    const SizedBox(height: 35),
-                    const Text(
-                      '痩せてるおじさんも、太ってるおじさんも、\n'
-                      'どっちもイカしてる。',
-                      textAlign: TextAlign.center,
+                    const Expanded(
+                      child: Center(
+                        child: Text(
+                          '痩せてるおじさんも、太ってるおじさんも、\n'
+                          'どっちもイカしてる。',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
                     ),
-                    const SizedBox(height: 120),
-                    Image.asset(
-                      _isSlimMan ? 'assets/slim.PNG' : 'assets/fat.PNG',
-                      height: 200,
-                      fit: BoxFit.fitHeight,
+                    Expanded(
+                      child: Image.asset(
+                        _isSlimMan ? 'assets/slim.PNG' : 'assets/fat.PNG',
+                        height: 200,
+                        fit: BoxFit.fitHeight,
+                      ),
                     ),
                   ],
                 ),
