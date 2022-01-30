@@ -39,6 +39,7 @@ class _OzisanPageState extends State<OzisanPage> {
                 child: Column(
                   children: [
                     Expanded(
+                      flex: 2,
                       child: Center(
                         child: Text(
                           'おじさんが\n痩せたり太ったりする\nアプリです。',
@@ -48,6 +49,7 @@ class _OzisanPageState extends State<OzisanPage> {
                       ),
                     ),
                     const Expanded(
+                      flex: 1,
                       child: Center(
                         child: Text(
                           '痩せてるおじさんも、太ってるおじさんも、\n'
@@ -56,13 +58,14 @@ class _OzisanPageState extends State<OzisanPage> {
                         ),
                       ),
                     ),
+                    const Spacer(),
                     Expanded(
+                      flex: 3,
                       child: Image.asset(
                         _isSlimMan ? 'assets/slim.PNG' : 'assets/fat.PNG',
-                        height: 200,
-                        fit: BoxFit.fitHeight,
                       ),
                     ),
+                    const Spacer(),
                   ],
                 ),
               ),
