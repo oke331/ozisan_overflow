@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -53,20 +54,24 @@ class _OzisanPageState extends State<OzisanPage> {
                     Expanded(
                       flex: 2,
                       child: Center(
-                        child: Text(
+                        child: AutoSizeText(
                           'おじさんが\n痩せたり太ったりする\nアプリです。',
                           style: Theme.of(context).textTheme.headline5,
                           textAlign: TextAlign.center,
+                          minFontSize: 0,
+                          stepGranularity: 0.1,
                         ),
                       ),
                     ),
                     const Expanded(
                       flex: 1,
                       child: Center(
-                        child: Text(
+                        child: AutoSizeText(
                           '痩せてるおじさんも、太ってるおじさんも、\n'
                           'どっちもイカしてる。',
                           textAlign: TextAlign.center,
+                          minFontSize: 0,
+                          stepGranularity: 0.1,
                         ),
                       ),
                     ),
